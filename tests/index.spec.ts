@@ -3,8 +3,7 @@ import {
   describe, it, expect,
 } from 'vitest';
 import { createApp } from 'vue';
-// eslint-disable-next-line import/extensions
-import MapComparePlugin, { MapCompare, ToggleCompare } from '@/index';
+import { MapComparePlugin, MapCompare, ToggleCompare } from '../src';
 
 describe('index.ts exports', () => {
   it('exports MapCompare component', () => {
