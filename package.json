@@ -2,6 +2,9 @@
   "name": "vue-maplibre-compare",
   "version": "1.0.27",
   "description": "A Vue 3 component for comparing MapLibre maps side-by-side with a slider",
+  "repository": "github:OpenGeoscience/vue-maplibre-compare",
+  "license": "Apache-2.0",
+  "author": "Kitware, Inc. <kitware@kitware.com>",
   "type": "module",
   "main": "./dist/vue-maplibre-compare.umd.js",
   "module": "./dist/vue-maplibre-compare.es.js",
@@ -15,7 +18,9 @@
     "./dist/vue-maplibre-compare.css": "./dist/vue-maplibre-compare.css"
   },
   "files": [
-    "dist"
+    "NOTICE",
+    "/src/",
+    "/dist/"
   ],
   "scripts": {
     "dev": "vite --config vite.config.demo.ts",
@@ -42,8 +47,6 @@
     "slider",
     "comparison"
   ],
-  "author": "",
-  "license": "MIT",
   "peerDependencies": {
     "maplibre-gl": "^5.24.0",
     "vue": "^3.0.0"
@@ -78,5 +81,14 @@
     "lodash": "^4.17.21",
     "maplibre-gl": "^5.24.0",
     "pmtiles": "^4.3.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=24"
+    }
   }
 }

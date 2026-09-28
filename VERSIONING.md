@@ -94,17 +94,6 @@ This will:
 
 The project includes a GitHub Actions workflow that can be manually triggered to publish to npm.
 
-### Prerequisites
-
-1. **NPM Token**: You need to add an `NPM_TOKEN` secret to your GitHub repository:
-   - Go to your repository settings
-   - Navigate to "Secrets and variables" > "Actions"
-   - Click "New repository secret"
-   - Name: `NPM_TOKEN`
-   - Value: Your npm access token (create one at https://www.npmjs.com/settings/YOUR_USERNAME/tokens)
-
-2. **GitHub Token**: The `GITHUB_TOKEN` is automatically provided by GitHub Actions, so no setup needed.
-
 ### Manual Workflow Trigger
 
 1. Go to the "Actions" tab in your GitHub repository
@@ -166,4 +155,3 @@ If the changelog is empty or not generated:
 - Ensure you have conventional commit messages since the last release
 - Check that `.versionrc.json` is properly configured
 - Run `npm run version` locally to test
-
