@@ -10,8 +10,6 @@ describe('useMapCompare', () => {
   let container: HTMLElement;
 
   beforeEach(() => {
-    vi.clearAllMocks();
-
     // Create mock container
     container = document.createElement('div');
     container.style.width = '800px';
