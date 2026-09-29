@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import { Map, RasterTileSource, StyleSpecification } from 'maplibre-gl';
-import { cloneDeep } from 'lodash';
 
 interface StyleCompareOptions {
   mapA: Map;
@@ -120,9 +119,9 @@ export function useStyleCompare(options: StyleCompareOptions) {
       }
     });
     if (targetMap === 'A') {
-      currentStyleA = cloneDeep(newStyle);
+      currentStyleA = structuredClone(newStyle);
     } else {
-      currentStyleB = cloneDeep(newStyle);
+      currentStyleB = structuredClone(newStyle);
     }
   }
   return {
