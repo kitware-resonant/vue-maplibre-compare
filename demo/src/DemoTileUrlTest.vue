@@ -31,16 +31,21 @@ export default defineComponent({
         url: 'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
       },
       {
-        name: 'CartoDB Positron',
-        url: 'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
+        name: 'OpenTopoMap',
+        url: 'https://tile.opentopomap.org/{z}/{x}/{y}.png'
       },
       {
-        name: 'CartoDB Dark Matter',
-        url: 'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+        name: 'Humanitarian OSM (HOT)',
+        url: 'https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
       },
       {
-        name: 'Stamen Terrain',
-        url: 'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg'
+        name: 'Esri World Topo',
+        // ArcGIS REST tiles use {z}/{y}/{x} (row/column), not {z}/{x}/{y}
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
+      },
+      {
+        name: 'Esri World Imagery',
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
       },
     ]
 
