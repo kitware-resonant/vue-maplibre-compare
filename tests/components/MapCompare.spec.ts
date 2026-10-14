@@ -1,5 +1,5 @@
 import {
-  describe, it, expect, vi, beforeEach,
+  describe, it, expect,
 } from 'vitest';
 import { mount } from '@vue/test-utils';
 import type { StyleSpecification } from 'maplibre-gl';
@@ -18,10 +18,6 @@ const mockStyle: StyleSpecification = {
 };
 
 describe('MapCompare', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('renders correctly with required props', () => {
     const wrapper = mount(MapCompare, {
       props: {

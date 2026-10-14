@@ -1,16 +1,11 @@
 /* eslint-disable vue/one-component-per-file */
 import {
-  describe, it, expect, vi, beforeEach,
+  describe, it, expect,
 } from 'vitest';
 import { createApp } from 'vue';
-// eslint-disable-next-line import/extensions
-import MapComparePlugin, { MapCompare, ToggleCompare } from '@/index';
+import { MapComparePlugin, MapCompare, ToggleCompare } from '../src';
 
 describe('index.ts exports', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('exports MapCompare component', () => {
     expect(MapCompare).toBeDefined();
     expect(MapCompare.name).toBe('MapCompare');

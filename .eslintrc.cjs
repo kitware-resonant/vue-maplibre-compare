@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  ignorePatterns: ['dist', 'demo-dist', 'coverage'],
   env: {
     browser: true,
     es2021: true,
