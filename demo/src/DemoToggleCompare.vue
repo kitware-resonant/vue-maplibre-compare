@@ -56,7 +56,7 @@ export default defineComponent({
           type: 'raster',
           tiles: [
             // eslint-disable-next-line vue/max-len
-            'https://gis.apfo.usda.gov/arcgis/rest/services/NAIP/USDA_CONUS_PRIME/ImageServer/tile/{z}/{y}/{x}?blankTile=false',
+            'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}',
           ],
           tileSize: 256,
         },
