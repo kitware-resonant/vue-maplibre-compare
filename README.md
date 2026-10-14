@@ -348,7 +348,7 @@ npm install
 npm run dev
 ```
 
-This will start a development server at `http://localhost:3000` with a demo application showing the component in action.
+This will start a development server at `http://localhost:5173` with a demo application showing the component in action.
 
 ### Build Library
 
