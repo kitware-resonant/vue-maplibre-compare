@@ -2,7 +2,10 @@
   "name": "vue-maplibre-compare",
   "version": "1.0.27",
   "description": "A Vue 3 component for comparing MapLibre maps side-by-side with a slider",
-  "repository": "github:OpenGeoscience/vue-maplibre-compare",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenGeoscience/vue-maplibre-compare.git"
+  },
   "license": "Apache-2.0",
   "author": "Kitware, Inc. <kitware@kitware.com>",
   "type": "module",
