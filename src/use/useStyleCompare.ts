@@ -119,6 +119,10 @@ export function useStyleCompare(options: StyleCompareOptions) {
         }
       }
     });
+    // `_.cloneDeep` is needed over `structuredClone`, as:
+    // * This library supports using functions as StyleSpecifications,
+    //   per: https://maplibre.org/maplibre-style-spec/deprecations/#function
+    // * The StyleSpecifications can be a Vue reactive object
     if (targetMap === 'A') {
       currentStyleA = cloneDeep(newStyle);
     } else {
