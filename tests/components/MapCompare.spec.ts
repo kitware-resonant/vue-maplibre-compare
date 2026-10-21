@@ -156,6 +156,7 @@ describe('MapCompare', () => {
         mapStyleB: mockStyle,
         swiperOptions: {
           thickness: 5,
+          orientation: 'vertical',
           grabThickness: 25,
           handleSize: 45,
           lineColor: '#ffffff',
