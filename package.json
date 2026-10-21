@@ -49,10 +49,8 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "html2canvas": "^1.4.1",
     "@tsdown/css": "^0.23.0",
     "@types/lodash": "^4.17.21",
-    "@types/mapbox-gl": "^3.4.1",
     "@types/node": "^24.10.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -66,6 +64,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-vue": "^9.33.0",
     "happy-dom": "^20.0.0",
+    "html2canvas": "^1.4.1",
     "standard-version": "^9.5.0",
     "tsdown": "^0.23.0",
     "typescript": "^5.9.3",
