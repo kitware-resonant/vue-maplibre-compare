@@ -27,6 +27,17 @@ A Vue 3 component for comparing MapLibre maps side-by-side with a draggable slid
 npm install vue-maplibre-compare maplibre-gl
 ```
 
+This library requires `maplibre-gl` v6 or later as a peer dependency. MapLibre GL JS v6 is distributed as ES modules only and needs to be told where your bundler placed its web worker. Call `setWorkerUrl` once in your app's entry point, before any map is created. For Vite:
+
+```typescript
+import { setWorkerUrl } from 'maplibre-gl'
+import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
+
+setWorkerUrl(workerUrl)
+```
+
+See the [MapLibre installation guide](https://maplibre.org/maplibre-gl-js/docs/#installation) for the equivalent snippet for webpack, esbuild, Rollup, and other bundlers. Without this, maps using vector or GeoJSON sources will fail with "Worker failed to load".
+
 ## Usage
 
 ### As a Vue Plugin

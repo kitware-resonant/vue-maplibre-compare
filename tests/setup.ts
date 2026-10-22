@@ -45,11 +45,8 @@ vi.mock('maplibre-gl', () => {
   const Map = vi.fn(MockMap);
 
   return {
-    default: {
-      Map,
-      addProtocol: vi.fn(),
-    },
     Map,
+    addProtocol: vi.fn(),
   };
 });
 
