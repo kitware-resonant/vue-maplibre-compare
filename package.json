@@ -29,10 +29,10 @@
     "format": "eslint . --ext .js,.ts,.vue --fix",
     "test": "vitest run",
     "test:watch": "vitest",
-    "version": "standard-version",
-    "version:minor": "standard-version --release-as minor",
-    "version:major": "standard-version --release-as major",
-    "version:patch": "standard-version --release-as patch",
+    "version": "commit-and-tag-version",
+    "version:minor": "commit-and-tag-version --release-as minor",
+    "version:major": "commit-and-tag-version --release-as major",
+    "version:patch": "commit-and-tag-version --release-as patch",
     "release": "npm run build && npm run version && git push --follow-tags"
   },
   "keywords": [
