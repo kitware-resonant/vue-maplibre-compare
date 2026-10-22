@@ -1,6 +1,6 @@
 # Versioning and Publishing Guide
 
-This project uses [semantic versioning](https://semver.org/) with [standard-version](https://github.com/conventional-changelog/standard-version) for automated version management.
+This project uses [semantic versioning](https://semver.org/) with [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for automated version management.
 
 ## Semantic Versioning
 

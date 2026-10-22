@@ -360,7 +360,7 @@ This will create the distributable library files in the `dist` directory.
 
 ### Versioning and Publishing
 
-This project uses semantic versioning with [standard-version](https://github.com/conventional-changelog/standard-version). See [VERSIONING.md](./VERSIONING.md) for detailed information about:
+This project uses semantic versioning with [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version). See [VERSIONING.md](./VERSIONING.md) for detailed information about:
 
 - How to bump versions locally
 - Publishing via GitHub Actions workflow
