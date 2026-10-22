@@ -65,7 +65,7 @@
     "eslint-plugin-vue": "^9.33.0",
     "happy-dom": "^20.0.0",
     "html2canvas": "^1.4.1",
-    "commit-and-tag-version": "^9.5.0",
+    "commit-and-tag-version": "^13.0.0",
     "tsdown": "^0.23.0",
     "typescript": "^5.9.3",
     "unplugin-vue": "^8.0.0",
