@@ -1,7 +1,7 @@
 // useMapCompare.ts
 import { ref } from 'vue';
 import syncMove from '@mapbox/mapbox-gl-sync-move';
-import maplibregl from 'maplibre-gl';
+import type { Map as MaplibreMap } from 'maplibre-gl';
 
 // Simple browser-compatible event emitter
 class EventEmitter {
@@ -42,8 +42,8 @@ export interface UseMapCompareOptions {
 }
 
 export function useMapCompare(
-  mapA: maplibregl.Map,
-  mapB: maplibregl.Map,
+  mapA: MaplibreMap,
+  mapB: MaplibreMap,
   container: string | HTMLElement | null,
   options: UseMapCompareOptions = {},
 ) {

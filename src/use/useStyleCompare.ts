@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
-import { Map, RasterTileSource, StyleSpecification } from 'maplibre-gl';
+import type {
+  AllLayoutProperties, AllPaintProperties, Map, RasterTileSource, StyleSpecification,
+} from 'maplibre-gl';
 import { cloneDeep } from 'lodash';
 
 interface StyleCompareOptions {
@@ -105,12 +107,12 @@ export function useStyleCompare(options: StyleCompareOptions) {
           // Compare and update paint properties
           if (newLayer.paint && JSON.stringify(currentLayer.paint) !== JSON.stringify(newLayer.paint)) {
             Object.entries(newLayer.paint).forEach(([key, value]) => {
-              targetMapInstance.setPaintProperty(newLayer.id, key, value);
+              targetMapInstance.setPaintProperty(newLayer.id, key as keyof AllPaintProperties, value);
             });
           }
           if (newLayer.layout && JSON.stringify(currentLayer.layout) !== JSON.stringify(newLayer.layout)) {
             Object.entries(newLayer.layout).forEach(([key, value]) => {
-              targetMapInstance.setLayoutProperty(newLayer.id, key, value);
+              targetMapInstance.setLayoutProperty(newLayer.id, key as keyof AllLayoutProperties, value);
             });
           }
           if ('filter' in newLayer && JSON.stringify(currentLayer.filter) !== JSON.stringify(newLayer.filter)) {

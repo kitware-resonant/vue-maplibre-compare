@@ -2,14 +2,15 @@
 import {
   defineComponent, ref, onMounted, onBeforeUnmount, watch, PropType, computed, nextTick,
 } from 'vue';
-import maplibregl, { Map as MaplibreMap, StyleSpecification } from 'maplibre-gl';
+import { Map as MaplibreMap, StyleSpecification, addProtocol } from 'maplibre-gl';
+import type { AttributionControlOptions, RequestParameters, ResourceType } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { Protocol } from 'pmtiles';
 import { useMapCompare } from '../use/useMapCompare';
 import { useStyleCompare } from '../use/useStyleCompare';
 
 const protocol = new Protocol();
-maplibregl.addProtocol('pmtiles', protocol.tile);
+addProtocol('pmtiles', protocol.tile);
 
 export interface SwiperOptions {
   thickness?: number
@@ -78,7 +79,7 @@ export default defineComponent({
     },
     transformRequest: {
       type: Function as PropType<
-      (url: string, resourceType?: maplibregl.ResourceType) => maplibregl.RequestParameters
+      (url: string, resourceType?: ResourceType) => RequestParameters
       >,
       default: undefined,
     },
@@ -101,7 +102,7 @@ export default defineComponent({
       }),
     },
     attributionControl: {
-      type: [Object, Boolean] as PropType<maplibregl.AttributionControlOptions | false>,
+      type: [Object, Boolean] as PropType<AttributionControlOptions | false>,
       required: false,
       default: () => undefined,
     },
@@ -254,7 +255,7 @@ export default defineComponent({
       if (!mapARef.value || !mapBRef.value || !containerRef.value) return;
 
       // Initialize Map A
-      mapA = new maplibregl.Map({
+      mapA = new MaplibreMap({
         container: mapARef.value,
         style: props.mapStyleA,
         center: props.camera.center,
@@ -272,7 +273,7 @@ export default defineComponent({
       });
 
       // Initialize Map B (use mapStyleA if mapStyleB is not provided)
-      mapB = new maplibregl.Map({
+      mapB = new MaplibreMap({
         container: mapBRef.value,
         style: props.mapStyleB || props.mapStyleA,
         center: props.camera.center,

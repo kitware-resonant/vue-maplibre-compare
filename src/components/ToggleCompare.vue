@@ -9,7 +9,8 @@ import {
   computed,
   nextTick,
 } from 'vue';
-import maplibregl, { Map as MaplibreMap, StyleSpecification } from 'maplibre-gl';
+import { Map as MaplibreMap, StyleSpecification, addProtocol } from 'maplibre-gl';
+import type { AttributionControlOptions, RequestParameters, ResourceType } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { Protocol } from 'pmtiles';
 import { useMapCompare } from '../use/useMapCompare';
@@ -17,7 +18,7 @@ import { useStyleCompare } from '../use/useStyleCompare';
 import type { SwiperOptions, CameraData } from './MapCompare.vue';
 
 const protocol = new Protocol();
-maplibregl.addProtocol('pmtiles', protocol.tile);
+addProtocol('pmtiles', protocol.tile);
 
 export interface ToggleCompareProps {
   mapStyleA: string | StyleSpecification
@@ -28,8 +29,8 @@ export interface ToggleCompareProps {
   layerOrder?: 'topmost' | 'bottommost'
   transformRequest?: (
     url: string,
-    resourceType?: maplibregl.ResourceType,
-  ) => maplibregl.RequestParameters,
+    resourceType?: ResourceType,
+  ) => RequestParameters,
   headers?: Record<string, string>
   swiperOptions?: SwiperOptions
   compareEnabled?: boolean
@@ -101,7 +102,7 @@ export default defineComponent({
     },
     transformRequest: {
       type: Function as PropType<
-      (url: string, resourceType?: maplibregl.ResourceType) => maplibregl.RequestParameters
+      (url: string, resourceType?: ResourceType) => RequestParameters
       >,
       default: undefined,
     },
@@ -128,7 +129,7 @@ export default defineComponent({
       default: 'mapContainer',
     },
     attributionControl: {
-      type: [Object, Boolean] as PropType<maplibregl.AttributionControlOptions | false>,
+      type: [Object, Boolean] as PropType<AttributionControlOptions | false>,
       required: false,
       default: () => undefined,
     },
@@ -312,7 +313,7 @@ export default defineComponent({
       if (!mapARef.value || !containerRef.value) return;
 
       // Initialize Map A
-      mapA = new maplibregl.Map({
+      mapA = new MaplibreMap({
         container: mapARef.value,
         style: props.mapStyleA,
         center: props.camera.center,
@@ -411,7 +412,7 @@ export default defineComponent({
     const initializeMapB = async () => {
       if (!mapBRef.value || !mapA || !props.mapStyleB) return;
       // Initialize Map B
-      mapB = new maplibregl.Map({
+      mapB = new MaplibreMap({
         container: mapBRef.value,
         style: props.mapStyleB,
         center: mapA.getCenter().toArray() as [number, number],

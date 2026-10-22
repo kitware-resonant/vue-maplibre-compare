@@ -1,12 +1,12 @@
 import {
   describe, it, expect, vi, beforeEach,
 } from 'vitest';
-import maplibregl from 'maplibre-gl';
+import { Map as MaplibreMap } from 'maplibre-gl';
 import { useMapCompare } from '../../src/use/useMapCompare';
 
 describe('useMapCompare', () => {
-  let mapA: maplibregl.Map;
-  let mapB: maplibregl.Map;
+  let mapA: MaplibreMap;
+  let mapB: MaplibreMap;
   let container: HTMLElement;
 
   beforeEach(() => {
@@ -17,12 +17,12 @@ describe('useMapCompare', () => {
     document.body.appendChild(container);
 
     // Create mock maps
-    mapA = new maplibregl.Map({
+    mapA = new MaplibreMap({
       container: document.createElement('div'),
       style: { version: 8, sources: {}, layers: [] },
     });
 
-    mapB = new maplibregl.Map({
+    mapB = new MaplibreMap({
       container: document.createElement('div'),
       style: { version: 8, sources: {}, layers: [] },
     });
