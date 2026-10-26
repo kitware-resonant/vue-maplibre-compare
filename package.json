@@ -67,7 +67,7 @@
     "html2canvas": "^1.4.1",
     "commit-and-tag-version": "^13.0.0",
     "tsdown": "^0.23.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.0",
     "unplugin-vue": "^8.0.0",
     "vite": "^8.0.0",
     "vitest": "^5.0.0",
