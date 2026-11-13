@@ -62,7 +62,7 @@
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-vue": "^9.33.0",
+    "eslint-plugin-vue": "^10.0.0",
     "happy-dom": "^21.0.0",
     "html2canvas": "^1.4.1",
     "commit-and-tag-version": "^13.0.0",
